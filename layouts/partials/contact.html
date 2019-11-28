@@ -46,10 +46,10 @@
                             id="message"></textarea>
                     </div>
                     <div id="mail-success" class="success">
-                        Thank you. The Mailman is on His Way :)
+                        Thank you. The Mailman is on his way :)
                     </div>
                     <div id="mail-fail" class="error">
-                        Sorry, don't know what happened. Try later :(
+                        Sorry, don't know what happened. Try again later :(
                     </div>
                     <div id="cf-submit">
                         <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
@@ -59,12 +59,6 @@
         </div>
     </div>
 
-    {{ if .Site.Data.contact.enable_maps }}
-    {{"<!-- Google Map -->" | safeHTML}}
-    <div class="google-map">
-        <div id="map-canvas" {{ with .Site.Data.contact.mapLatitude }} data-latitude="{{ . }}" {{ end }} {{ with .Site.Data.contact.mapLongitude }} data-longitude="{{ . }}" {{ end }}></div>
-    </div>
-    {{ end }}
 </section>
 {{"<!-- /contact -->" | safeHTML}}
 {{ end }}

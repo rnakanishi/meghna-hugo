@@ -5,9 +5,12 @@
 <section class="section section-bg">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-8">
                 <div class="title text-center">
-                    <h2> {{ with i18n "aboutAuthor" }} {{ index (split . " ") 0 }} {{ end }}<span class="color"> {{ with i18n "aboutAuthor" }} {{ index (split . " ") 1 }} {{ end }} </span></h2>
+                    <h2> {{ with i18n "aboutAuthor" }} {{ index (split . " ") 0 }} {{ end }}<span class="color">
+                            {{ with i18n "aboutAuthor" }} {{ index (split . " ") 1 }} {{ end }} </span></h2>
                     <div class="border-meghna"></div>
                 </div>
                 <div class="content text-center">
@@ -51,22 +54,23 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
 {{ end }}
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title text-center">
-                        <h2>  {{ with i18n "authorsPosts" }} {{ index (split . " ") 0 }} {{ end }}<span class="color"> {{ with i18n "authorsPosts" }} {{ index (split . " ") 1 }} {{ end }}</h2>
-                            <div class="border-meghna"></div>
-                        </div>
-                    </div>
-                    {{ range .Data.Pages }}
-                    {{ .Render "article" }}
-                    {{ end }}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title text-center">
+                    <h2> {{ with i18n "authorsPosts" }} {{ index (split . " ") 0 }} {{ end }}<span class="color">
+                            {{ with i18n "authorsPosts" }} {{ index (split . " ") 1 }} {{ end }}</h2>
+                    <div class="border-meghna"></div>
                 </div>
             </div>
+            {{ range .Data.Pages }}
+            {{ .Render "article" }}
+            {{ end }}
         </div>
+    </div>
+    </div>
 </section>
 {{ end }}

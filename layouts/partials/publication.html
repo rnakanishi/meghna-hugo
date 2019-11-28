@@ -1,20 +1,20 @@
-{{ if .Site.Data.blog.enable}}
+{{ if .Site.Data.publication.enable}}
 {{"<!-- Start Blog Section -->" | safeHTML}}
 {{ $data := index .Site.Data .Site.Language.Lang }}
-<section id="blog" class="section-bg">
+<section id="portfolio" class="portfolio section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 {{"<!-- section title -->" | safeHTML}}
-                <div class="title text-center wow fadeInDown">
-                    <h2> {{ with .Site.Data.blog.heading }} {{ . }} {{ end }} <span class="color">
-                            {{ with .Site.Data.blog.headingSpan }} {{ . }} {{ end }} </span></h2>
+                <div class="title text-center  ">
+                    <h2> {{ with .Site.Data.publication.heading }} {{ . }} {{ end }} <span class="color">
+                            {{ with .Site.Data.publication.headingSpan }} {{ . }} {{ end }} </span></h2>
                     <div class="border-meghna"></div>
                 </div>
             </div>
             {{"<!-- /section title -->" | safeHTML}}
 
-            {{ range first 3 (where .Site.Pages "Params.category" "blog") }}
+            {{ range first 3 (where .Site.Pages "Params.category" "publication") }}
             {{"<!-- single blog post -->" | safeHTML}}
             <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp" data-wow-duration="500ms">
                 <div class="post-block">
@@ -23,8 +23,8 @@
                     </div>
 
                     <div class="content">
-                        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                        <p>{{ .Params.summary }}</p>
+                        <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                        <p>{{ .Params.Summary }}</p>
                         <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
 
             <div class="all-post text-center col-lg-12">
                 <a class="btn btn-main"
-                    href="{{ if .Site.GetPage "/blog" }}/blog{{ else }}/posts{{end}}">{{ i18n "viewAllPost" }}</a>
+                    href="{{ if .Site.GetPage "/publications" }}/publications{{ else }}/posts{{end}}">{{ i18n "viewAllPost" }}</a>
             </div>
         </div>
     </div>
