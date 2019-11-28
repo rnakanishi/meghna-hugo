@@ -38,13 +38,13 @@
 <section class="section section-bg about-2 padding-0" id="about">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 padding-0 "></div>
-            <div class="col-lg-3 padding-0 ">
+            <div class="col-lg-1 padding-0 "></div>
+            <div class="col-lg-4 padding-0 ">
                 <img class="img-fluid author-about" src="{{ .Site.Data.about2.image | absURL}}" alt="image">
             </div>
             <div class="col-lg-1 padding-0 "></div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="content-block">
                     {{with .Site.Data.about2.title}} <h2>{{ . }}</h2> {{ end }}
                     {{with .Site.Data.about2.description}} <p>{{ . }}</p> {{ end }}
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 padding-0 "></div>
+            <div class="col-lg-1 padding-0 "></div>
         </div>
     </div>
 </section>
